@@ -191,7 +191,7 @@ section {
   position: relative;
 }
 
-.section-title::after {
+it .section-title::after {
   content: "";
   display: block;
   width: 80px;
@@ -217,11 +217,13 @@ section {
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .project-link {
   text-decoration: none;
   color: #fff;
   text-shadow: #000000 1px 1px 1px;
 }
+
 .project:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
@@ -337,10 +339,76 @@ section {
     opacity: 0;
     transform: translateY(40px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Mobile Nav Toggle */
+.mobile-nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2000;
+  padding: 10px;
+}
+
+.hamburger {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  left: 0;
+  transition: transform 0.3s, top 0.3s;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+/* Mobile Nav Open State */
+.nav-open .hamburger {
+  background: transparent;
+}
+
+.nav-open .hamburger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nav-open .hamburger::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Scroll Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Responsive Design */
@@ -351,182 +419,201 @@ section {
     padding: 20px 40px;
   }
 
-  .hero {
-    padding: 100px 40px 60px;
-  }
+  ero {
+    dding: 100px 40px 60px;
 
-  .hero h1 {
-    font-size: 4rem;
-  }
 
-  .hero .subtitle {
-    font-size: 1.4rem;
-  }
+    ero h1 {
+      nt-size: 4rem;
 
-  .social-icons {
-    right: 30px;
-  }
 
-  section {
-    padding: 80px 40px;
-  }
+      ero .subtitle {
+        nt-size: 1.4rem;
 
-  .section-title {
-    font-size: 2.5rem;
-  }
-}
 
-/* Mobile devices */
-@media screen and (max-width: 768px) {
-  .navbar {
-    padding: 15px 20px;
-    flex-direction: column;
-    gap: 15px;
-  }
+        ocial-icons {
+          ght: 30px;
 
-  .logo {
-    font-size: 1.5rem;
-  }
 
-  .nav-links {
-    gap: 20px;
-  }
+          ction {
+            dding: 80px 40px;
 
-  .nav-links a {
-    font-size: 0.85rem;
-  }
 
-  .hero {
-    padding: 120px 20px 80px;
-    min-height: auto;
-  }
+            ection-title {
+              nt-size: 2.5rem;
 
-  .hero-content {
-    max-width: 100%;
-  }
 
-  .hero h1 {
-    font-size: 3rem;
-  }
 
-  .hero .subtitle {
-    font-size: 1.2rem;
-  }
+              Mobile devices */ edia screen and (max-width: 768px) {
+                .mobile-nav-toggle {
+                  display: block;
+                }
 
-  .hero-description {
-    font-size: 1rem;
-  }
+                .nav-links {
+                  position: fixed;
+                  top: 0;
+                  right: -100%;
+                  height: 100vh;
+                  width: 70%;
+                  max-width: 300px;
+                  background: rgba(0, 0, 0, 0.95);
+                  backdrop-filter: blur(10px);
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  transition: right 0.3s ease-in-out;
+                  z-index: 1000;
+                  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+                }
 
-  .cta-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
+                .av-links.active {
+                  right: 0;
+                }
 
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
+                avbar {
+                  pdding: 15px 20px;
+                  jstify-content: space-between;
+                  align-items: center;
+                }
 
-  .social-icons {
-    position: static;
-    flex-direction: row;
-    transform: none;
-    margin-top: 40px;
-    justify-content: center;
-  }
+                ogo {
+                  fnt-size: 1.5rem;
+                }
 
-  section {
-    padding: 60px 20px;
-  }
+                .nav-links a {
+                  font-size: 1.2rem;
+                  rgin: 15px 0;
+                }
 
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
+                .ero {
+                  padding: 120px 20px 80px;
+                  min-height: auto;
 
-  .projects-container {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
 
-  .about-text {
-    font-size: 0.95rem;
-  }
+                  .ero-content {
+                    mx-width: 100%;
+                  }
 
-  .contact-text {
-    font-size: 1rem;
-  }
-}
+                  .hero h1 {
+                    nt-size: 3rem;
+                  }
 
-/* Small mobile devices */
-@media screen and (max-width: 480px) {
-  .navbar {
-    padding: 12px 15px;
-  }
+                  .ero .subtitle {
+                    font-size: 1.2rem;
+                  }
 
-  .logo {
-    font-size: 1.3rem;
-  }
+                  ero-description {
+                    fnt-size: 1rem;
+                  }
 
-  .nav-links {
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+                  .cta-buttons {
+                    flex-direction: column;
+                    p: 15px;
+                  }
 
-  .nav-links a {
-    font-size: 0.8rem;
-  }
+                  .tn {
+                    width: 100%;
+                    text-align: center;
 
-  .hero {
-    padding: 100px 15px 60px;
-  }
 
-  .hero h1 {
-    font-size: 2.5rem;
-  }
+                    .ocial-icons {
+                      psition: static;
+                      flex-direction: row;
+                      ansform: none;
+                      mrgin-top: 40px;
+                      justify-content: center;
+                    }
 
-  .hero .subtitle {
-    font-size: 1rem;
-  }
+                    ction {
+                      pdding: 60px 20px;
+                    }
 
-  .hero-description {
-    font-size: 0.9rem;
-  }
+                    .section-title {
+                      font-size: 2rem;
+                      rgin-bottom: 40px;
+                    }
 
-  .btn {
-    padding: 12px 28px;
-    font-size: 0.85rem;
-  }
+                    .rojects-container {
+                      grid-template-columns: 1fr;
+                      gap: 25px;
 
-  .social-icons a img {
-    width: 24px;
-    height: 24px;
-  }
 
-  section {
-    padding: 50px 15px;
-  }
+                      .bout-text {
+                        fnt-size: 0.95rem;
+                      }
 
-  .section-title {
-    font-size: 1.8rem;
-  }
+                      .contact-text {
+                        nt-size: 1rem;
 
-  .project h3 {
-    font-size: 1.2rem;
-  }
 
-  .project p {
-    font-size: 0.9rem;
-  }
 
-  .tech-list li {
-    font-size: 0.75rem;
-    padding: 5px 10px;
-  }
+                        Small mobile devices */ edia screen and (max-width: 480px) {
+                          avbar {
+                            pdding: 12px 15px;
+                          }
 
-  .footer {
-    font-size: 0.8rem;
-    padding: 20px 15px;
-  }
-}
+                          .logo {
+                            font-size: 1.3rem;
+
+
+                            .av-links {
+                              gp: 15px;
+                              flex-wrap: wrap;
+                              justify-content: center;
+
+
+                              .av-links a {
+                                fnt-size: 0.8rem;
+                              }
+
+                              .hero {
+                                dding: 100px 15px 60px;
+                              }
+
+                              .ero h1 {
+                                font-size: 2.5rem;
+                              }
+
+                              ero .subtitle {
+                                fnt-size: 1rem;
+                              }
+
+                              .hero-description {
+                                font-size: 0.9rem;
+
+
+                                .tn {
+                                  pdding: 12px 28px;
+                                  font-size: 0.85rem;
+                                }
+
+                                ocial-icons a img {
+                                  wdth: 24px;
+                                  hight: 24px;
+                                }
+
+                                section {
+                                  dding: 50px 15px;
+                                }
+
+                                .ection-title {
+                                  font-size: 1.8rem;
+                                }
+
+                                roject h3 {
+                                  fnt-size: 1.2rem;
+                                }
+
+                                .project p {
+                                  font-size: 0.9rem;
+
+
+                                  .ech-list li {
+                                    fnt-size: 0.75rem;
+                                    padding: 5px 10px;
+                                  }
+
+                                  ooter {
+                                    fnt-size: 0.8rem;
+                                    pdding: 20px 15px;
+                                  }
