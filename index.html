@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aravind KB - Portfolio</title>
-    <meta name="description"
-        content="Portfolio of Aravind KB (Kannan), a developer and designer passionate about creating immersive digital experiences.">
-    <meta name="keywords" content="Aravind KB, Kannan, Developer, Designer, Portfolio, Web Development, Next.js, React">
     <link
         href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;700&family=Roboto+Condensed:wght@400;700&display=swap"
         rel="stylesheet">
@@ -15,9 +12,8 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">Kannan</div>
+    <nav class="navbar" id="navbar">
+        <div class="logo">KANNAN</div>
         <button class="mobile-nav-toggle" aria-label="Toggle navigation">
             <span class="hamburger"></span>
         </button>
@@ -25,14 +21,14 @@
             <a href="#home">Home</a>
             <a href="#projects">Projects</a>
             <a href="#about">About</a>
+            <a href="#stats">Stats</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content reveal">
-            <h1>Aravind <span>KB</span></h1>
+            <h1 style="text-shadow: 5px 2px 1px black;">Aravind <span>KB</span></h1>
             <p class="subtitle">Gamer · Developer · Designer</p>
             <p class="hero-description">
                 Crafting immersive digital experiences at the crossroads of code and creativity.
@@ -43,7 +39,6 @@
             </div>
         </div>
 
-        <!-- Social Icons -->
         <div class="social-icons">
             <a href="https://github.com/kann4n" target="_blank">
                 <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
@@ -60,25 +55,45 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section class="projects reveal" id="projects">
-        <div class="section-title">Projects</div>
+        <div class="section-title">Trending Projects</div>
         <div class="projects-container">
-            <!-- projects will be added here via javascript -->
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about reveal" id="about">
-        <div class="section-title">About</div>
-        <p class="about-text">
-            I'm Aravind KB, also known as Kannan. I'm a developer who thrives at the intersection of technology and art.
-            From building dynamic applications and designing sleek interfaces to experimenting with AI, I am passionate
-            about crafting immersive digital experiences that push the boundaries of creativity.
-        </p>
+        <div class="section-title">About Me</div>
+        <div class="about-grid">
+            <div class="about-text-block">
+                <p class="about-text">
+                    I'm <span class="highlight">Aravind KB</span>, also known as Kannan — a developer who thrives at the
+                    intersection of technology and art. I build dynamic applications, design sleek interfaces, and
+                    experiment with AI to craft immersive digital experiences.
+                </p>
+                <div class="about-tags">
+                    <span>Full-Stack Dev</span>
+                    <span>UI / UX Design</span>
+                    <span>AI Enthusiast</span>
+                    <span>Game Dev</span>
+                </div>
+            </div>
+            <div class="about-stats-mini">
+                <div class="mini-stat">
+                    <span class="mini-stat-num">10+</span>
+                    <span class="mini-stat-label">Projects</span>
+                </div>
+                <div class="mini-stat">
+                    <span class="mini-stat-num">3+</span>
+                    <span class="mini-stat-label">Years Coding</span>
+                </div>
+                <div class="mini-stat">
+                    <span class="mini-stat-num">∞</span>
+                    <span class="mini-stat-label">Creativity</span>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- GitHub Stats Section -->
     <section class="github-stats reveal" id="stats">
         <div class="section-title">GitHub Stats</div>
         <div class="stats-container">
@@ -97,19 +112,23 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact reveal" id="contact">
         <div class="section-title">Contact</div>
         <p class="contact-text">
-            Want to collaborate or just chat? Drop me a message and let's connect.
+            Get in touch
         </p>
-        <a href="mailto:kannan.codes456@gmail.com" class="btn btn-primary">Email Me</a>
+        <div>
+            <a href="mailto:kannan.codes456@gmail.com" class="btn btn-secondary">Email Me</a>
+            <a href="https://www.linkedin.com/in/aravind-kb-dev" target="_blank" class="btn btn-primary">LinkedIn</a>
+            <a href="https://github.com/kann4n" target="_blank" class="btn btn-secondary">GitHub</a>
+        </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <p>© 2025 Aravind KB · Crafted with ❤️</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
 </body>
 
